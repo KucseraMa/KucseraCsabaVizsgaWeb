@@ -8,11 +8,15 @@ namespace KucseraCsabaVizsgaWeb.Controllers
         public IActionResult Index()
         {
             string cime = Request.Form["cim"];
+           string iranyszama = Request.Form["iranyszam"];
+            string varosa = Request.Form["varos"];            
 
             BejelentModel bm = new();
             bm.AktualisIdo = DateTime.Now;
             bm.Sorszam = 1;
             bm.Cime = cime;
+            bm.Iranyszam = iranyszama;
+            bm.Varos = varosa;
 
             return View(bm);
         }
