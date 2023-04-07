@@ -16,26 +16,30 @@ public partial class Adatbazis : DbContext
     {
     }
 
-    public virtual DbSet<Hibajelento> Hibajelentos { get; set; }
+    public virtual DbSet<Bejelento2> Bejelento2s { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Kucsera\\source\\repos\\KucseraCsabaVizsgaWeb\\adatbazis.mdf;Integrated Security=True;Connect Timeout=30");
+        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Kucsera\\source\\repos\\KucseraCsabaVizsgaWeb\\Adatbazis\\Bejelent.mdf;Integrated Security=True;Connect Timeout=30");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Hibajelento>(entity =>
+        modelBuilder.Entity<Bejelento2>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Hibajele__3214EC07226C7A06");
+            entity.HasKey(e => e.BejelentoId).HasName("PK__Bejelent__2A3085B10BF7699D");
 
-            entity.ToTable("Hibajelento");
+            entity.ToTable("Bejelento2");
 
-            entity.Property(e => e.Cim).HasMaxLength(50);
-            entity.Property(e => e.Datum).HasColumnType("datetime");
+            entity.Property(e => e.Cim)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.Date).HasColumnType("datetime");
             entity.Property(e => e.Iranyszam)
-                .HasMaxLength(10)
-                .IsFixedLength();
-            entity.Property(e => e.Varos).HasMaxLength(50);
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.Varos)
+                .HasMaxLength(255)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);
