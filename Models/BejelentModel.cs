@@ -6,7 +6,7 @@
         public string Iranyszam { get; set; }
         public string Varos { get; set; }
         public DateTime AktualisIdo { get; set; }
-        public int Sorszam { get; set; }
+       // public int Sorszam { get; set; }
 
     }
 }
