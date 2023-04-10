@@ -14,12 +14,4 @@ public partial class Bejelento2
     public DateTime? Date { get; set; }
 
     public string Iranyszam { get; set; } = null!;
-
-   //public bool MunkaElvegezve { get; set; } = false!;
-
-    public override string ToString()
-    {
-        return $"Sorszám: {BejelentoId} Cím: {Iranyszam} {Varos} {Cim}  Bejelentés dátuma: {Date}";
-    }
-
 }
