@@ -15,7 +15,7 @@ public partial class Bejelento2
 
     public string Iranyszam { get; set; } = null!;
 
-    public bool MunkaElvegezve { get; set; } = false!;
+   //public bool MunkaElvegezve { get; set; } = false!;
 
     public override string ToString()
     {
