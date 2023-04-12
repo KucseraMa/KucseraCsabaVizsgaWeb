@@ -7,7 +7,7 @@ public partial class Munka
 {
     public int Id { get; set; }
 
-    public string Tipus { get; set; }
+    public string Tipus { get; set; } = null!;
 
     public string Munkatars { get; set; } = null!;
 
