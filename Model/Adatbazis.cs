@@ -47,7 +47,7 @@ public partial class Adatbazis : DbContext
         modelBuilder.Entity<Munka>(entity =>
         {
             entity
-                .HasNoKey()
+               // .HasNoKey()
                 .ToTable("Munka");
 
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
