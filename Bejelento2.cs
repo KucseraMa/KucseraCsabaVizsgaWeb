@@ -5,7 +5,7 @@ namespace KucseraCsabaVizsgaWeb;
 
 public partial class Bejelento2
 {
-    public int? BejelentoId { get; set; }
+    public int BejelentoId { get; set; }
 
     public string Varos { get; set; } = null!;
 

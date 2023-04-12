@@ -15,9 +15,9 @@ public partial class Munka
 
     public DateTime? Idotartam { get; set; }
 
-    public string Allapot { get; set; } = null!;
+    public string? Allapot { get; set; } 
 
-    public int? BejelentoId { get; set; } 
+    public int BejelentoId { get; set; } 
 
     public virtual Bejelento2 Bejelento { get; set; } = null!;
 }
